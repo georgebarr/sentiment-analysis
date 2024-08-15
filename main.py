@@ -1,3 +1,4 @@
+import os
 from typing import Dict
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
@@ -16,23 +17,33 @@ def calculate_mood(polarity_scores: Dict[str, float]) -> str:
 
     if polarity_scores["compound"] >= 0.5:
 
-        simplified_score = "Positive"
+        simplified_score = "positive"
 
     elif polarity_scores["compound"] > -0.5 and polarity_scores["compound"] < 0.5:
 
-        simplified_score = "Neutral"
+        simplified_score = "neutral"
 
     else:
 
-        simplified_score = "Negative"
+        simplified_score = "negative"
 
     return simplified_score
 
 
 def main() -> None:
 
-    pass
+    user_text = input("Enter your text here: \n")
+
+    os.system(
+        "cls" if os.name == "nt" else "clear"
+    )  # Clears the terminal for a cleaner user experience.
+
+    polarity_scores = analyse_text(user_text)
+    mood = calculate_mood(polarity_scores)
+
+    print(f"The sentiment of your text was considered {mood}.")
 
 
 if __name__ == "__main__":
+
     main()
