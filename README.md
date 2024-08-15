@@ -1,6 +1,6 @@
 # Text Sentiment Analysis
 
-## Brief Description
+## A Brief Description
 
 This project uses [VADER Sentiment Analysis](https://github.com/cjhutto/vaderSentiment) to decipher the sentiment of a piece of inputted text, which is assigned a polarity score and then categorised into 'positive', 'negative' or 'neutral'. This category is outputted to the user.
 
