@@ -1,0 +1,1 @@
+This project uses [VADER Sentiment Analysis](https://github.com/cjhutto/vaderSentiment).
