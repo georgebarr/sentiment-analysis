@@ -8,4 +8,4 @@ This project uses [VADER Sentiment Analysis](https://github.com/cjhutto/vaderSen
 
 1. <strong>VADER Sentiment Analysis</strong>
 
-    This program requires the [VADER Sentiment Analysis library](https://github.com/cjhutto/vaderSentiment) to function properly. It can be installed using pip with the command `pip install vaderSentiment`.
+    This program requires the [VADER Sentiment Analysis library](https://github.com/cjhutto/vaderSentiment) to function properly. It can be installed using pip with the command `pip install vaderSentiment`
