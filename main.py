@@ -3,21 +3,33 @@ from typing import Dict
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
-def fetch_score(text: str):
+def analyse_text(text: str) -> Dict[str, float]:
+    """Analyses the text returns the polarity scores"""
 
-    # Returns polarity score
+    analyser_object = SentimentIntensityAnalyzer()
 
-    pass
-
-
-def calculate_mood(polarity_score: Dict[str, float]):
-
-    # returns a simplified form of the mood based on the polarity score
-
-    pass
+    return analyser_object.polarity_scores(text)
 
 
-def main():
+def calculate_mood(polarity_scores: Dict[str, float]) -> str:
+    """Returns a simplified form of the mood based on the polarity scores"""
+
+    if polarity_scores["compound"] >= 0.5:
+
+        simplified_score = "Positive"
+
+    elif polarity_scores["compound"] > -0.5 and polarity_scores["compound"] < 0.5:
+
+        simplified_score = "Neutral"
+
+    else:
+
+        simplified_score = "Negative"
+
+    return simplified_score
+
+
+def main() -> None:
 
     pass
 
